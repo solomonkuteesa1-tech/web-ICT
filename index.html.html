@@ -1,0 +1,2684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Premier ICT - Comprehensive guide to Information and Communication Technology. Learn about ICT fundamentals, computer systems, networking, software, databases, and cybersecurity.">
+    <meta name="keywords" content="ICT, Information Technology, Communication Technology, Computer Systems, Networking, Database, Cybersecurity, Education">
+    <meta name="author" content="Solomon Kuteesa">
+    <meta name="theme-color" content="#8B4513">
+    <title>Premier ICT - Comprehensive Guide</title>
+    <style>
+        :root {
+            --primary: #8B0000; /* Dark Red */
+            --primary-light: #DC143C; /* Crimson */
+            --primary-dark: #4B0000; /* Deep Red */
+            --secondary: #1a0f0a; /* Deep Brown/Black */
+            --light: #ffffff; /* White */
+            --cream: #f5f1ed; /* Cream */
+            --accent: #0f3d91; /* Dark Blue */
+            --accent-dark: #08306b; /* Darker Blue */
+            --gray: #6B4423;
+            --success: #7851a9; /* Purple */
+            --warning: #DC143C; /* Crimson */
+            --danger: #8B0000; /* Dark Red */
+            --card-shadow: 0 10px 30px rgba(139, 0, 0, 0.15);
+            --border-radius: 16px;
+            --gradient-primary: linear-gradient(135deg, #8B0000, #DC143C);
+            --gradient-accent: linear-gradient(135deg, #0f3d91, #08306b);
+            --purple: #7851a9;
+            --brown: #8B4513;
+            --black: #1a0f0a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--secondary);
+            line-height: 1.8;
+            font-size: 1rem;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Animated ICT Background Wallpaper */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(45deg, rgba(245, 241, 237, 0.98), rgba(255, 248, 240, 0.98)),
+                url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='grad1' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:rgba(139,0,0,0.08)'/%3E%3Cstop offset='100%25' style='stop-color:rgba(15,61,145,0.08)'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23grad1)' width='100' height='100'/%3E%3Ccircle cx='20' cy='20' r='2' fill='rgba(139,0,0,0.1)'/%3E%3Ccircle cx='80' cy='80' r='2' fill='rgba(139,0,0,0.1)'/%3E%3Cline x1='20' y1='20' x2='80' y2='80' stroke='rgba(15,61,145,0.05)' stroke-width='1'/%3E%3Crect x='40' y='40' width='20' height='20' fill='none' stroke='rgba(139,0,0,0.05)' stroke-width='1'/%3E%3C/svg%3E"),
+                linear-gradient(135deg, #f5f1ed, #fff8f0);
+            background-attachment: fixed;
+            background-size: auto, 150px 150px, 100% 100%;
+            z-index: -1;
+            animation: moveBg 20s linear infinite;
+        }
+
+        @keyframes moveBg {
+            0% { background-position: 0 0, 0 0, 0 0; }
+            100% { background-position: 50px 50px, 100px 100px, 0 0; }
+        }
+
+        /* Floating tech icons animation */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.03; }
+            50% { transform: translateY(-20px) rotate(5deg); opacity: 0.08; }
+        }
+
+        @keyframes float2 {
+            0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.04; }
+            50% { transform: translateY(20px) rotate(-5deg); opacity: 0.09; }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.05; }
+            50% { opacity: 0.12; }
+        }
+
+        /* Tech decoration elements */
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(15, 61, 145, 0.02) 1px, transparent 1px),
+                radial-gradient(circle at 80% 80%, rgba(139, 0, 0, 0.02) 1px, transparent 1px),
+                radial-gradient(circle at 40% 30%, rgba(120, 81, 169, 0.01) 1px, transparent 1px);
+            background-size: 200px 200px, 300px 300px, 250px 250px;
+            background-position: 0 0, 40px 60px, 130px 270px;
+            pointer-events: none;
+            z-index: -1;
+            animation: pulse 8s ease-in-out infinite;
+        }
+
+        p {
+            margin-bottom: 0.8rem;
+        }
+
+        h2, h3, h4, h5, h6 {
+            margin-top: 0.8rem;
+            margin-bottom: 0.6rem;
+        }
+
+        ul, ol {
+            margin-bottom: 1rem;
+            margin-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.4rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        header {
+            background: var(--gradient-primary);
+            color: var(--light);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 10px 30px rgba(139, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            border-bottom: 3px solid var(--accent);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .custom-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+            border: 3px solid var(--accent);
+            background: var(--light);
+            flex-shrink: 0;
+        }
+
+        .custom-logo span {
+            font-weight: 800;
+            font-size: 1.4rem;
+        }
+
+        .custom-logo .p { color: #DC143C; } /* Crimson */
+        .custom-logo .r { color: #7851a9; } /* Purple */
+        .custom-logo .i { color: #0f3d91; } /* Dark Blue */
+        .custom-logo .paren { color: #1a0f0a; } /* Black */
+
+        .logo-text h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            letter-spacing: -0.7px;
+            margin: 0;
+        }
+
+        .logo-text p {
+            font-size: 0.9rem;
+            opacity: 0.92;
+            margin-top: 4px;
+            font-weight: 500;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 700;
+            padding: 0.7rem 1rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.15);
+            font-size: 0.9rem;
+            display: inline-block;
+        }
+
+        nav a:hover {
+            background: rgba(255, 255, 255, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero {
+            text-align: center;
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, rgba(139, 0, 0, 0.06), rgba(15, 61, 145, 0.06));
+            margin: 3rem 0;
+            border-radius: var(--border-radius);
+            box-shadow: 0 10px 30px rgba(139, 0, 0, 0.15);
+            position: relative;
+            overflow: hidden;
+            border: 2px solid rgba(15, 61, 145, 0.18);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(15, 61, 145, 0.12), transparent);
+            border-radius: 50%;
+            animation: float 8s ease-in-out infinite;
+            z-index: 0;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -50%;
+            left: -10%;
+            width: 250px;
+            height: 250px;
+            background: radial-gradient(circle, rgba(139, 0, 0, 0.12), transparent);
+            border-radius: 50%;
+            animation: float2 10s ease-in-out infinite;
+            z-index: 0;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.2rem;
+            color: var(--primary-dark);
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 900;
+            letter-spacing: -1px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 1.5rem;
+            color: var(--secondary);
+            opacity: 0.85;
+            line-height: 1.9;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Logo and Information Banner */
+        .logo-banner {
+            background: var(--gradient-accent);
+            color: white;
+            padding: 3.5rem 2rem;
+            margin: 2.5rem 0;
+            border-radius: var(--border-radius);
+            box-shadow: 0 15px 40px rgba(15, 61, 145, 0.28);
+            position: relative;
+            overflow: hidden;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .logo-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                url("data:image/svg+xml,%3Csvg width='200' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='circuit' x='0' y='0' width='200' height='200' patternUnits='userSpaceOnUse'%3E%3Crect width='200' height='200' fill='rgba(255,255,255,0.02)'/%3E%3Ccircle cx='50' cy='50' r='3' fill='rgba(255,255,255,0.08)'/%3E%3Ccircle cx='150' cy='150' r='3' fill='rgba(255,255,255,0.08)'/%3E%3Cline x1='50' y1='50' x2='150' y2='150' stroke='rgba(255,255,255,0.04)' stroke-width='1'/%3E%3Crect x='100' y='100' width='30' height='30' fill='none' stroke='rgba(255,255,255,0.06)' stroke-width='1'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='200' height='200' fill='url(%23circuit)'/%3E%3C/svg%3E");
+            background-size: 200px 200px;
+            opacity: 0.15;
+            z-index: 0;
+            animation: moveBg 15s linear infinite;
+        }
+
+        .logo-banner-content {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .logo-display {
+            text-align: center;
+        }
+
+        .logo-display .custom-logo-large {
+            width: 120px;
+            height: 120px;
+            font-size: 3.2rem;
+            border: 5px solid white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+        }
+
+        .info-content {
+            color: white;
+        }
+
+        .info-content h3 {
+            font-size: 1.6rem;
+            margin-bottom: 0.8rem;
+            color: #a5f3fc;
+            font-weight: 800;
+        }
+
+        .info-content p {
+            margin-bottom: 0.6rem;
+            line-height: 1.6;
+            opacity: 0.95;
+            font-size: 0.95rem;
+        }
+
+        .info-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+            margin-top: 1.2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.8rem;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+
+        .stat-number {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #a5f3fc;
+            letter-spacing: -1px;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-top: 0.4rem;
+        }
+
+        /* Instant scrolling (no smooth scroll) */
+        html {
+            scroll-behavior: auto;
+        }
+
+        /* Better link focus */
+        a:focus, button:focus {
+            outline: 3px solid var(--primary);
+            outline-offset: 2px;
+        }
+
+        .section {
+            padding: 4rem 0;
+            position: relative;
+            z-index: 1;
+            border-top: 1px solid rgba(139, 0, 0, 0.08);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+            padding-bottom: 2rem;
+            position: relative;
+        }
+
+        .section-header h2 {
+            font-size: 2.2rem;
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+            font-weight: 900;
+            letter-spacing: -0.5px;
+            padding-bottom: 0.5rem;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--gradient-accent);
+            border-radius: 2px;
+            box-shadow: 0 0 20px rgba(15, 61, 145, 0.4);
+        }
+
+        .collapsible-section {
+            background: var(--light);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1.8rem;
+            box-shadow: 0 4px 12px rgba(139, 0, 0, 0.1);
+            border: 2px solid #ffe8e8;
+            cursor: pointer;
+            transition: all 0.35s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .collapsible-section:hover {
+            background: #f5f1ed;
+            transform: translateY(-4px);
+            border-color: var(--primary);
+            box-shadow: 0 12px 24px rgba(139, 0, 0, 0.18), 0 0 20px rgba(15, 61, 145, 0.1);
+        }
+
+        .collapsible-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            padding: 0.3rem 0;
+        }
+
+        .collapsible-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+            padding: 0;
+        }
+
+        .collapsible-section.active .collapsible-content {
+            max-height: 2500px;
+            padding: 1.2rem 0 0;
+        }
+
+        .toggle-icon {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .collapsible-section.active .toggle-icon {
+            transform: rotate(180deg);
+        }
+
+        .content-section {
+            background: var(--light);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1.8rem;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.12);
+            border-left: 5px solid var(--primary);
+            position: relative;
+            z-index: 1;
+            transition: all 0.3s ease;
+        }
+
+        .content-section:hover {
+            box-shadow: 0 8px 20px rgba(139, 0, 0, 0.15), 0 0 15px rgba(15, 61, 145, 0.08);
+        }
+
+        .content-section h3 {
+            color: var(--primary-dark);
+            margin-bottom: 0.8rem;
+            font-size: 1.25rem;
+            font-weight: 800;
+            letter-spacing: -0.3px;
+        }
+
+        .content-section h4 {
+            color: var(--primary);
+            margin: 1.2rem 0 0.8rem;
+            font-size: 1.05rem;
+            font-weight: 700;
+        }
+
+        .content-section p {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+
+        .content-section ul li {
+            line-height: 1.8;
+            margin-bottom: 0.6rem;
+        }
+
+        .subtopics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .subtopic-item {
+            background: linear-gradient(135deg, #fdf5e6 0%, #f5ede0 100%);
+            padding: 1.3rem;
+            border-radius: 12px;
+            border-left: 5px solid var(--primary);
+            font-size: 0.98rem;
+            line-height: 1.7;
+            box-shadow: 0 3px 8px rgba(139, 69, 19, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .subtopic-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px rgba(139, 69, 19, 0.15);
+            border-left-color: var(--accent);
+        }
+
+        .example-box {
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.12), rgba(56, 189, 248, 0.06));
+            border-left: 5px solid var(--accent);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(56, 189, 248, 0.1);
+        }
+
+        .example-box strong {
+            color: var(--accent-dark);
+            display: block;
+            margin-bottom: 0.6rem;
+            font-size: 1.05rem;
+        }
+
+        .importance-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .importance-item {
+            background: linear-gradient(135deg, #e0f7fa 0%, #b3e5fc 100%);
+            padding: 1.3rem;
+            border-radius: 12px;
+            border-left: 5px solid var(--accent);
+            font-size: 0.98rem;
+            line-height: 1.7;
+            box-shadow: 0 3px 10px rgba(56, 189, 248, 0.12);
+            transition: all 0.3s ease;
+        }
+
+        .importance-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(56, 189, 248, 0.2);
+        }
+
+        .importance-item strong {
+            color: var(--accent-dark);
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 1.05rem;
+        }
+
+        /* Card Styling */
+        .card {
+            background: var(--light);
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 12px rgba(139, 0, 0, 0.1);
+            transition: all 0.35s ease;
+            padding: 1.8rem;
+            border: 1px solid rgba(139, 0, 0, 0.08);
+            position: relative;
+            z-index: 1;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 30px rgba(139, 0, 0, 0.18), 0 0 20px rgba(15, 61, 145, 0.08);
+        }
+
+        /* Instructor Card Specific */
+        .instructor-card {
+            background: linear-gradient(135deg, var(--light), #f5f1ed);
+            border-radius: 16px;
+            padding: 2.3rem;
+            text-align: center;
+            box-shadow: 0 6px 18px rgba(139, 0, 0, 0.12);
+            border: 2px solid #ffe8e8;
+            transition: all 0.35s ease;
+        }
+
+        .instructor-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 18px 35px rgba(139, 0, 0, 0.22);
+            border-color: var(--primary);
+        }
+
+        .instructor-avatar {
+            width: 90px;
+            height: 90px;
+            margin: 0 auto 1rem;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            box-shadow: 0 6px 16px rgba(139, 0, 0, 0.25);
+            border: 4px solid var(--light);
+        }
+
+        .instructor-name {
+            font-size: 1.3rem;
+            color: var(--brown-dark);
+            margin-bottom: 0.3rem;
+            font-weight: 800;
+        }
+
+        .instructor-title {
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .instructor-bio {
+            color: var(--secondary);
+            font-size: 0.9rem;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .instructor-contact {
+            font-size: 0.85rem;
+            color: #666;
+            margin: 1rem 0 0 0;
+        }
+
+        /* Blog and Resource Card Styles */
+        .blog-card, .resource-card {
+            background: linear-gradient(135deg, var(--light), #f9f7f4);
+            border-radius: 12px;
+            padding: 1.8rem;
+            box-shadow: 0 6px 18px rgba(139, 69, 19, 0.12);
+            border: 2px solid var(--brown-light);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-card:hover, .resource-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 28px rgba(139, 69, 19, 0.2);
+            border-color: var(--primary);
+        }
+
+        .blog-card h3, .resource-card h3 {
+            color: var(--brown-dark);
+            margin-bottom: 0.8rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .blog-card p, .resource-card p {
+            color: var(--secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            flex-grow: 1;
+        }
+
+        .blog-date, .resource-tag {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+        }
+
+        .blog-read-more, .resource-link {
+            display: inline-block;
+            color: var(--primary);
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            align-self: flex-start;
+        }
+
+        .blog-read-more:hover, .resource-link:hover {
+            color: var(--primary-dark);
+            transform: translateX(4px);
+        }
+
+        /* FAQ Styles */
+        .faq-item {
+            background: var(--light);
+            border: 2px solid var(--brown-light);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.2rem;
+            box-shadow: 0 4px 12px rgba(139, 69, 19, 0.1);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            border-color: var(--primary);
+            box-shadow: 0 6px 18px rgba(139, 69, 19, 0.15);
+            transform: translateX(4px);
+        }
+
+        .faq-question {
+            font-weight: 700;
+            color: var(--brown-dark);
+            font-size: 1.1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            margin-top: 1rem;
+            color: var(--secondary);
+            line-height: 1.7;
+            border-top: 1px solid var(--brown-light);
+            padding-top: 1rem;
+            font-size: 0.95rem;
+        }
+
+        /* Feedback Portal Styles */
+        .feedback-portal {
+            background: linear-gradient(135deg, var(--light), #f9f7f4);
+            padding: 2.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 10px 30px rgba(139, 69, 19, 0.2);
+            max-width: 700px;
+            margin: 2rem auto;
+            border: 2px solid var(--brown-light);
+        }
+
+        .feedback-portal h2 {
+            color: var(--brown-dark);
+            margin-bottom: 1.5rem;
+            font-size: 1.7rem;
+            font-weight: 800;
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            color: var(--brown-dark);
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem 0.95rem;
+            border: 2px solid #d1d5db;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(106, 13, 173, 0.15);
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            border: none;
+            padding: 1rem 2.5rem;
+            font-size: 1.05rem;
+            font-weight: 800;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 6px 18px rgba(139, 0, 0, 0.3);
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 28px rgba(139, 0, 0, 0.4);
+        }
+
+        .submit-btn:active {
+            transform: translateY(-1px);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Social Media Links */
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1.3rem;
+            box-shadow: 0 4px 12px rgba(106, 13, 173, 0.25);
+        }
+
+        .social-link:hover {
+            transform: translateY(-4px) scale(1.1);
+            box-shadow: 0 8px 20px rgba(106, 13, 173, 0.4);
+        }
+
+        strong {
+            font-weight: 700;
+            color: var(--brown-dark);
+        }
+
+        strong em, em strong {
+            font-style: italic;
+        }
+
+        /* Code and Pre styling */
+        code, pre {
+            background: rgba(106, 13, 173, 0.05);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+
+        pre {
+            padding: 1rem;
+            overflow-x: auto;
+            margin: 1rem 0;
+            border-left: 4px solid var(--primary);
+        }
+
+        footer {
+            background: linear-gradient(135deg, var(--secondary), #0f1e3a);
+            color: var(--light);
+            padding: 3.5rem 0 2rem;
+            margin-top: 4rem;
+            border-top: 5px solid var(--accent);
+            position: relative;
+            z-index: 1;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                url("data:image/svg+xml,%3Csvg width='200' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='footer-circuit' x='0' y='0' width='200' height='200' patternUnits='userSpaceOnUse'%3E%3Ccircle cx='50' cy='50' r='2' fill='rgba(255,255,255,0.05)'/%3E%3Ccircle cx='150' cy='150' r='2' fill='rgba(255,255,255,0.05)'/%3E%3Cline x1='50' y1='50' x2='150' y2='150' stroke='rgba(6,182,212,0.02)' stroke-width='1'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='200' height='200' fill='url(%23footer-circuit)'/%3E%3C/svg%3E");
+            background-size: 200px 200px;
+            opacity: 0.5;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1.3rem;
+            font-size: 1.15rem;
+            color: var(--accent);
+            position: relative;
+            padding-bottom: 0.8rem;
+            font-weight: 800;
+            letter-spacing: -0.3px;
+        }
+
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(to right, var(--accent), var(--primary));
+            border-radius: 2px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin: 0.8rem 0;
+            font-size: 0.95rem;
+        }
+
+        .footer-section p {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            opacity: 0.9;
+        }
+
+        .footer-section a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .footer-section a:hover {
+            color: var(--accent);
+            padding-left: 6px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            color: #94a3b8;
+            border-top: 1px solid #444;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            line-height: 1.8;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.88);
+            z-index: 1000;
+            overflow-y: auto;
+            backdrop-filter: blur(4px);
+        }
+
+        .modal-content {
+            background: var(--light);
+            max-width: 900px;
+            margin: 2.5rem auto;
+            padding: 3rem;
+            border-radius: 18px;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+            animation: slideIn 0.35s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            border-bottom: 3px solid var(--brown-light);
+            padding-bottom: 1.3rem;
+        }
+
+        .modal-header h2 {
+            font-size: 1.9rem;
+            color: var(--brown-dark);
+            margin: 0;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 2.2rem;
+            cursor: pointer;
+            color: #999;
+            transition: all 0.3s ease;
+            padding: 0;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        .modal-close:hover {
+            color: var(--primary);
+            transform: rotate(90deg);
+            background: rgba(106, 13, 173, 0.1);
+        }
+
+        .modal-body {
+            max-height: 70vh;
+            overflow-y: auto;
+            line-height: 1.9;
+        }
+
+        .modal-body h3 {
+            color: var(--brown-dark);
+            font-size: 1.4rem;
+            margin-top: 1.8rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+            letter-spacing: -0.3px;
+        }
+
+        .modal-body h4 {
+            color: var(--primary);
+            font-size: 1.15rem;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .modal-body p {
+            margin-bottom: 1rem;
+            font-size: 0.98rem;
+        }
+
+        .modal-body ul {
+            margin-left: 1.8rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .modal-body li {
+            margin-bottom: 0.7rem;
+            font-size: 0.98rem;
+        }
+
+        /* Download Button */
+        .download-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--success), #059669);
+            color: white;
+            padding: 1rem 2.2rem;
+            border-radius: 10px;
+            text-decoration: none;
+            margin-top: 1.8rem;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 0.98rem;
+            letter-spacing: 0.3px;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.35);
+        }
+
+        /* Form Styling */
+        .feedback-portal,
+        .enrollment-form {
+            position: relative;
+            z-index: 1;
+        }
+
+        .form-group {
+            margin-bottom: 1.3rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.6rem;
+            font-weight: 700;
+            color: var(--brown-dark);
+            font-size: 0.95rem;
+            letter-spacing: -0.2px;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.85rem 1rem;
+            border: 2px solid #e0d5c7;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(106, 13, 173, 0.15), 0 0 15px rgba(106, 13, 173, 0.25);
+            transform: translateY(-1px);
+        }
+
+        .form-group textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: var(--gradient-primary);
+            color: white;
+            border: none;
+            padding: 1rem 2.5rem;
+            font-size: 1.05rem;
+            font-weight: 700;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            letter-spacing: 0.3px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .submit-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(139, 0, 0, 0.35);
+        }
+
+        .submit-btn:hover::before {
+            left: 100%;
+        }
+
+        .submit-btn:active {
+            transform: translateY(-1px);
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 0.8rem;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .section {
+                padding: 2rem 0;
+            }
+            
+            .collapsible-header {
+                font-size: 1.2rem;
+            }
+            
+            .subtopics-grid,
+            .importance-list {
+                grid-template-columns: 1fr;
+            }
+            
+            .logo-banner-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .custom-logo-large {
+                width: 120px !important;
+                height: 120px !important;
+                font-size: 3rem !important;
+            }
+
+            .modal-content {
+                margin: 1rem;
+                padding: 1.5rem;
+            }
+
+            .modal-body {
+                max-height: 80vh;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo-section">
+                <div class="custom-logo">
+                    <span class="paren">(</span><span class="p">P</span><span class="r">R</span><span class="i">I</span><span class="paren">)</span>
+                </div>
+                <div class="logo-text">
+                    <h1>Premier ICT</h1>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#definition">Definition</a></li>
+                    <li><a href="#curriculum">Curriculum</a></li>
+                    <li><a href="#datascience">Data Science</a></li>
+                    <li><a href="#instructors">Instructors</a></li>
+                    <li><a href="#resources">Resources</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#feedback">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Logo and Information Banner -->
+    <section class="logo-banner">
+        <div class="container">
+            <div class="logo-banner-content">
+                <div class="logo-display">
+                    <div class="custom-logo custom-logo-large">
+                        <span class="paren">(</span><span class="p">P</span><span class="r">R</span><span class="i">I</span><span class="paren">)</span>
+                    </div>
+                </div>
+                <div class="info-content">
+                    <h3>About Premier ICT</h3>
+                    <p>Premier ICT is your comprehensive educational platform dedicated to providing in-depth knowledge and practical skills in Information and Communication Technology. We offer structured curriculum covering everything from basic computer literacy to advanced topics like data science, cybersecurity, and emerging technologies.</p>
+                    <p>Our mission is to bridge the digital divide and empower learners with the essential ICT skills needed for the modern workforce and digital economy.</p>
+                    
+                    <div class="info-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">50+</div>
+                            <div class="stat-label">Topics Covered</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">10K+</div>
+                            <div class="stat-label">Students Trained</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">24/7</div>
+                            <div class="stat-label">Access Available</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="hero">
+        <div class="container">
+            <h2>Information and Communication Technology</h2>
+            <p>Your comprehensive guide to understanding ICT in the modern digital world</p>
+        </div>
+    </section>
+
+    <!-- ICT Definition Section -->
+    <section id="definition" class="section" style="background: linear-gradient(135deg, rgba(106, 13, 173, 0.05), rgba(56, 189, 248, 0.05)), url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&q=50') center/cover fixed;">
+        <div class="container">
+            <div class="section-header">
+                <h2>What is ICT?</h2>
+            </div>
+            
+            <div class="collapsible-section active" id="ict-definition">
+                <div class="collapsible-header">
+                    <span>ICT Definition and Overview</span>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <p>ICT stands for Information and Communication Technology, encompassing all technological tools and resources used to create, process, store, retrieve, and exchange digital information. This includes hardware (computers, phones, networks) and software, enabling communication and data management in education, business, and daily life.</p>
+                    <p>ICT is a broad term that extends Information Technology (IT) by emphasizing unified communication, integrating telecommunications (phones, internet) with computing systems.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curriculum Section -->
+    <section id="curriculum" class="section" style="background: var(--cream), url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&q=50') center/cover; background-blend-mode: overlay;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Comprehensive ICT Curriculum</h2>
+            </div>
+            
+            <div class="collapsible-section active">
+                <div class="collapsible-header">
+                    <span>1. Introduction to ICT</span>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="content-section">
+                        <h3>Introduction to ICT</h3>
+                        <p>Information and Communication Technology, commonly known as ICT, refers to the use of modern technologies to collect, process, store, and share information. ICT plays a very important role in our daily lives and has changed the way people work, learn, and communicate.</p>
+                        
+                        <h3>The Components of ICT</h3>
+                        <p>The word ICT is made up of three parts:</p>
+                        <ul style="margin-left: 20px;">
+                            <li><strong>Information</strong> - Processed data that is meaningful and useful</li>
+                            <li><strong>Communication</strong> - The act of sending and receiving information from one person or place to another</li>
+                            <li><strong>Technology</strong> - Tools and machines created to make work easier</li>
+                        </ul>
+
+                        <h3>ICT Tools and Technologies</h3>
+                        <p>ICT uses different tools such as computers, mobile phones, the internet, radios, televisions, and networks to handle information and communication efficiently. These tools help people to access information quickly and communicate over long distances.</p>
+
+                        <h3>Main Components of ICT</h3>
+                        <p>ICT is made up of three main components:</p>
+                        <ul style="margin-left: 20px;">
+                            <li><strong>Hardware</strong> - The physical parts of a computer such as the keyboard, mouse, monitor, and printer</li>
+                            <li><strong>Software</strong> - Programs like Microsoft Word, Windows, and web browsers that tell the computer what to do</li>
+                            <li><strong>People (Users)</strong> - Those who use ICT devices, for example students, teachers, doctors, and business people</li>
+                        </ul>
+
+                        <h3>Applications of ICT</h3>
+                        <p>ICT is widely used in many areas:</p>
+                        <ul style="margin-left: 20px;">
+                            <li><strong>Education</strong> - Used for research, online learning, and examinations</li>
+                            <li><strong>Business</strong> - Helps in accounting, online banking, and communication with customers</li>
+                            <li><strong>Healthcare</strong> - Used to store patient records and support medical research</li>
+                            <li><strong>Communication</strong> - Improves communication through emails, phone calls, video conferencing, and social media</li>
+                        </ul>
+
+                        <h3>Advantages of ICT</h3>
+                        <div class="subtopics-grid">
+                            <div class="subtopic-item">Makes work faster and easier</div>
+                            <div class="subtopic-item">Saves time and increases productivity</div>
+                            <div class="subtopic-item">Improves communication</div>
+                            <div class="subtopic-item">Allows large amounts of information to be stored safely</div>
+                        </div>
+
+                        <h3>Disadvantages of ICT</h3>
+                        <div class="subtopics-grid">
+                            <div class="subtopic-item">High costs of equipment and maintenance</div>
+                            <div class="subtopic-item">Cybercrime and security threats</div>
+                            <div class="subtopic-item">Health problems from overuse</div>
+                            <div class="subtopic-item">Loss of privacy and data protection concerns</div>
+                        </div>
+
+                        <h3>Conclusion</h3>
+                        <p>ICT is an important part of modern life. Understanding ICT helps people to use technology wisely and effectively in education, work, and everyday activities.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-section active">
+                <div class="collapsible-header">
+                    <span>2. Computer Hardware</span>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="content-section">
+                        <h3>What is Computer Hardware?</h3>
+                        <p>Computer hardware refers to the physical components of a computer system that you can touch and see. Hardware includes all the tangible parts that work together to process data and perform computations. Without hardware, there is no physical medium to run software.</p>
+                        
+                        <h3>Main Categories of Hardware</h3>
+                        <ul style="margin-left: 20px;">
+                            <li><strong>Processing Components:</strong> CPU, GPU, system chipset</li>
+                            <li><strong>Memory Components:</strong> RAM, ROM, Cache memory</li>
+                            <li><strong>Storage Components:</strong> Hard drives, SSDs, optical drives</li>
+                            <li><strong>Input Devices:</strong> Keyboard, mouse, scanner, microphone</li>
+                            <li><strong>Output Devices:</strong> Monitor, speakers, printer, projector</li>
+                            <li><strong>Networking Components:</strong> Network card, modem, router</li>
+                        </ul>
+
+                        <h3>Key Hardware Components in Detail</h3>
+                        <ul style="margin-left: 20px;">
+                            <li><strong>CPU (Central Processing Unit):</strong> The brain of the computer that executes instructions and performs calculations. Speed is measured in GHz (gigahertz)</li>
+                            <li><strong>RAM (Random Access Memory):</strong> Temporary memory that stores data currently being used. Measured in GB. Faster than storage but volatile (loses data when powered off)</li>
+                            <li><strong>Storage Devices:</strong> Hard Disk Drives (HDD) and Solid State Drives (SSD) provide permanent data storage. Slower than RAM but retain data when powered off</li>
+                            <li><strong>Motherboard:</strong> Main circuit board that connects all components and allows them to communicate</li>
+                            <li><strong>Power Supply Unit (PSU):</strong> Converts AC power to DC power and distributes it to all components</li>
+                            <li><strong>Cooling System:</strong> Fans and heat sinks that prevent overheating of components</li>
+                            <li><strong>Peripherals:</strong> External devices like keyboard, mouse, monitor, printer that extend computer functionality</li>
+                        </ul>
+
+                        <h3>Types of Computers</h3>
+                        <ul style="margin-left: 20px;">
+                            <li><strong>Desktop Computers:</strong> Fixed computers with separate components, suitable for office and gaming</li>
+                            <li><strong>Laptops:</strong> Portable computers with integrated components for mobility</li>
+                            <li><strong>Tablets:</strong> Touchscreen devices for media consumption and light computing</li>
+                            <li><strong>Smartphones:</strong> Mobile computing devices with processing power</li>
+                            <li><strong>Servers:</strong> High-powered computers that provide services to multiple users</li>
+                            <li><strong>Mainframes:</strong> Large systems for processing massive amounts of data</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-section active">
+                <div class="collapsible-header">
+                    <span>3. Computer Software</span>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="content-section">
+                        <h3>What is Software?</h3>
+                        <p>Software is a set of instructions, data, and programs that control how a computer works. It tells the hardware what to do. Without software, hardware has no purpose. Software is intangible - you cannot touch it, but you can see its effects when you use a computer.</p>
+
+                        <h3>Two Main Categories of Software</h3>
+                        <ul style="margin-left: 20px;">
+                            <li><strong>System Software:</strong> Controls the operation of the computer hardware and provides a platform for running application software</li>
+                            <li><strong>Application Software:</strong> Programs designed to help users accomplish specific tasks</li>
+                        </ul>
+                        
+                        <h3>System Software</h3>
+                        <p>System software manages hardware resources and allows other software to run. Key types include:</p>
+                        <ul style="margin-left: 20px;">
+                            <li><strong>Operating Systems:</strong> Windows, macOS, Linux, Android, iOS - Control hardware and provide user interface</li>
+                            <li><strong>Device Drivers:</strong> Enable communication between hardware and operating system</li>
+                            <li><strong>Firmware:</strong> Permanent software programmed into hardware devices</li>
+                            <li><strong>Utility Software:</strong> System maintenance tools like antivirus, disk cleanup, compression utilities</li>
+                            <li><strong>Boot Programs:</strong> Initialize the computer during startup</li>
+                        </ul>
+
+                        <h3>Application Software</h3>
+                        <p>Application software is designed to perform specific tasks for users. Examples include:</p>
+                        <ul style="margin-left: 20px;">
+                            <li><strong>Office Productivity:</strong> Microsoft Word, Excel, PowerPoint, Google Docs - for document creation and data analysis</li>
+                            <li><strong>Multimedia:</strong> Adobe Photoshop, Premier, Audacity - for graphics, video, and audio editing</li>
+                            <li><strong>Communication:</strong> Gmail, Outlook, WhatsApp, Zoom - for email and messaging</li>
+                            <li><strong>Web Browsers:</strong> Chrome, Firefox, Safari, Edge - for internet access</li>
+                            <li><strong>Database Software:</strong> MySQL, Microsoft Access, Oracle - for data management</li>
+                            <li><strong>Programming Tools:</strong> Visual Studio, Python IDE, GitHub - for software development</li>
+                            <li><strong>Business Software:</strong> SAP, QuickBooks, Salesforce - for enterprise management</li>
+                        </ul>
+
+                        <h3>Software Licensing</h3>
+                        <ul style="margin-left: 20px;">
+                            <li><strong>Proprietary Software:</strong> Commercial software with licensing restrictions (Microsoft Office, Adobe Creative Suite)</li>
+                            <li><strong>Open Source Software:</strong> Free software with source code available (Linux, Firefox, VLC)</li>
+                            <li><strong>Freeware:</strong> Free to use but may have restrictions on modification</li>
+                            <li><strong>Shareware:</strong> Try before you buy model</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-section active">
+                <div class="collapsible-header">
+                    <span>4. Networks and Internet</span>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="content-section">
+                        <h3>What are Computer Networks?</h3>
+                        <p>A computer network is a group of computers and devices connected together through communication links to share resources, information, and services. Networks enable communication and data sharing between devices. The benefits include resource sharing, improved communication, and increased efficiency.</p>
+                        
+                        <h3>Network Types by Size and Scope</h3>
+                        <ul style="margin-left: 20px;">
+                            <li><strong>PAN (Personal Area Network):</strong> Very small network covering a few meters (example: Bluetooth connections between phone and earbuds)</li>
+                            <li><strong>LAN (Local Area Network):</strong> Networks limited to a small geographic area like a home, office, or school building. Fast speed, high security</li>
+                            <li><strong>MAN (Metropolitan Area Network):</strong> Networks covering a city or large campus. Faster than WAN but slower than LAN</li>
+                            <li><strong>WAN (Wide Area Network):</strong> Networks covering large geographic areas, even continents. Example: The Internet itself</li>
+                            <li><strong>Internet:</strong> Global network of networks connecting billions of devices worldwide</li>
+                        </ul>
+
+                        <h3>Network Components</h3>
+                        <ul style="margin-left: 20px;">
+                            <li><strong>Routers:</strong> Direct data traffic between networks</li>
+                            <li><strong>Switches:</strong> Connect devices within a network</li>
+                            <li><strong>Modems:</strong> Convert digital signals to analog (DSL/Cable modems)</li>
+                            <li><strong>Network Interface Cards (NIC):</strong> Enable devices to connect to networks</li>
+                            <li><strong>Cables and Wireless Access Points:</strong> Physical medium for network connections</li>
+                            <li><strong>Firewalls:</strong> Protect networks from unauthorized access</li>
+                        </ul>
+
+                        <h3>Internet Services and Protocols</h3>
+                        <ul style="margin-left: 20px;">
+                            <li><strong>World Wide Web (WWW):</strong> Uses HTTP/HTTPS protocol for accessing websites</li>
+                            <li><strong>Email:</strong> Uses SMTP (sending) and POP3/IMAP (receiving) protocols</li>
+                            <li><strong>File Transfer:</strong> FTP and SFTP for transferring files</li>
+                            <li><strong>Remote Access:</strong> SSH, Telnet for remote connections</li>
+                            <li><strong>Messaging:</strong> Instant messaging, VoIP (Voice over Internet Protocol), Video conferencing</li>
+                            <li><strong>Streaming:</strong> Audio and video streaming services (YouTube, Netflix, Spotify)</li>
+                            <li><strong>Cloud Services:</strong> Cloud storage (Google Drive, OneDrive), SaaS applications</li>
+                        </ul>
+
+                        <h3>Networking Technologies</h3>
+                        <ul style="margin-left: 20px;">
+                            <li><strong>Wired Connections:</strong> Ethernet cables (fast, stable, but less flexible)</li>
+                            <li><strong>Wireless Connections:</strong> Wi-Fi, Bluetooth, cellular networks (flexible but slower)</li>
+                            <li><strong>5G Technology:</strong> Next-generation mobile network technology with higher speeds</li>
+                            <li><strong>VPN (Virtual Private Network):</strong> Secures internet connection through encryption</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-section active">
+                <div class="collapsible-header">
+                    <span>5. Data Security and Privacy</span>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="content-section">
+                        <h3>What is Cybersecurity?</h3>
+                        <p>Cybersecurity involves protecting computer systems, networks, and data from unauthorized access, theft, and damage. In today's digital world, cybersecurity is critical for individuals, businesses, and governments. It protects sensitive information and maintains the integrity of systems.</p>
+                        
+                        <h3>Types of Cyber Threats</h3>
+                        <ul style="margin-left: 20px;">
+                            <li><strong>Malware:</strong> Malicious software including viruses, worms, trojans, and ransomware</li>
+                            <li><strong>Phishing:</strong> Deceptive emails or websites designed to steal login credentials</li>
+                            <li><strong>Hacking:</strong> Unauthorized access to computer systems and networks</li>
+                            <li><strong>DDoS Attacks:</strong> Denial-of-Service attacks that overload servers</li>
+                            <li><strong>Social Engineering:</strong> Manipulating people to divulge confidential information</li>
+                            <li><strong>Man-in-the-Middle Attacks:</strong> Intercepting communication between two parties</li>
+                            <li><strong>SQL Injection:</strong> Inserting malicious code into databases</li>
+                            <li><strong>Zero-Day Exploits:</strong> Attacks using previously unknown vulnerabilities</li>
+                        </ul>
+
+                        <h3>Security Technologies and Measures</h3>
+                        <ul style="margin-left: 20px;">
+                            <li><strong>Encryption:</strong> Converting data into code to prevent unauthorized access. Used in HTTPS websites, encrypted messaging apps</li>
+                            <li><strong>Firewalls:</strong> Monitor and control incoming and outgoing network traffic. Can be hardware or software</li>
+                            <li><strong>Antivirus Software:</strong> Detects and removes malicious software</li>
+                            <li><strong>Intrusion Detection Systems (IDS):</strong> Monitor networks for suspicious activity</li>
+                            <li><strong>Virtual Private Network (VPN):</strong> Encrypts internet connection and masks IP address</li>
+                            <li><strong>Multi-Factor Authentication (MFA):</strong> Requires multiple forms of verification to access accounts</li>
+                            <li><strong>Data Backup:</strong> Creating copies of critical data for recovery purposes</li>
+                        </ul>
+
+                        <h3>Security Best Practices for Users</h3>
+                        <ul style="margin-left: 20px;">
+                            <li><strong>Use Strong Passwords:</strong> At least 12 characters with uppercase, lowercase, numbers, and symbols. Use unique passwords for different accounts</li>
+                            <li><strong>Enable Two-Factor Authentication (2FA):</strong> Adds extra security layer beyond passwords</li>
+                            <li><strong>Keep Software Updated:</strong> Install security patches and updates promptly to fix vulnerabilities</li>
+                            <li><strong>Be Cautious with Emails:</strong> Don't open attachments or click links from unknown senders</li>
+                            <li><strong>Use Antivirus Software:</strong> Keep security software updated and running</li>
+                            <li><strong>Verify Websites:</strong> Look for HTTPS and lock symbol before entering sensitive information</li>
+                            <li><strong>Backup Important Data:</strong> Regular backups protect against data loss from ransomware or hardware failure</li>
+                            <li><strong>Think Before You Share:</strong> Limit personal information shared on social media and online</li>
+                            <li><strong>Use Public Wi-Fi Safely:</strong> Avoid accessing sensitive accounts on unsecured public networks</li>
+                            <li><strong>Report Suspicious Activity:</strong> Alert authorities or platforms if you suspect cyber attacks</li>
+                        </ul>
+
+                        <h3>Privacy and Data Protection</h3>
+                        <ul style="margin-left: 20px;">
+                            <li><strong>Personal Data:</strong> Information that identifies you - name, email, phone number, address</li>
+                            <li><strong>Sensitive Data:</strong> Financial information, health records, passwords, biometric data</li>
+                            <li><strong>Data Privacy Laws:</strong> GDPR (Europe), CCPA (California), and other regulations protect user data</li>
+                            <li><strong>Cookie Management:</strong> Websites use cookies to track user behavior - you can manage cookie settings</li>
+                            <li><strong>Privacy Settings:</strong> Configure privacy settings on social media and online accounts</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Data Science Program Section -->
+    <section id="datascience" class="section" style="background: linear-gradient(135deg, rgba(106, 13, 173, 0.08), rgba(0, 0, 0, 0.05)), url('https://images.unsplash.com/photo-1551986782-d244d7d3f3f5?w=1200&q=50') center/cover; background-attachment: fixed;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Diploma in Data Science, Management & Analytics</h2>
+            </div>
+            
+            <div class="collapsible-section active" id="dda-overview">
+                <div class="collapsible-header">
+                    <span>Program Overview</span>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="content-section">
+                        <p>The Diploma in Data Science, Management & Analytics (DDA) at the Uganda Institute of Information and Communications Technology (UICT) is a cutting-edge program designed to prepare students for the data-driven economy.</p>
+                        <p><strong>Duration:</strong> 2 Years (4 semesters + Internship) • <strong>Credential:</strong> Diploma • <strong>Mode:</strong> Full-time / Day</p>
+                        
+                        <h3>Program Goals</h3>
+                        <div class="subtopics-grid">
+                            <div class="subtopic-item">Develop practical data analysis skills</div>
+                            <div class="subtopic-item">Learn statistical methods and modeling</div>
+                            <div class="subtopic-item">Master data visualization techniques</div>
+                            <div class="subtopic-item">Understand business intelligence tools</div>
+                            <div class="subtopic-item">Build predictive models</div>
+                            <div class="subtopic-item">Manage large datasets effectively</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-section active">
+                <div class="collapsible-header">
+                    <span>Admission Requirements</span>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="content-section">
+                        <h3>Educational Requirements</h3>
+                        <ul style="margin-left: 20px;">
+                            <li>Uganda Advanced Certificate of Education (UACE) or equivalent</li>
+                            <li>Minimum of 2 Principal passes or equivalent</li>
+                            <li>Proficiency in Mathematics is highly recommended</li>
+                        </ul>
+                        
+                        <h3>Other Requirements</h3>
+                        <ul style="margin-left: 20px;">
+                            <li>Valid identification document</li>
+                            <li>High school transcripts</li>
+                            <li>Personal statement/motivation letter</li>
+                            <li>Two reference letters</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-section active">
+                <div class="collapsible-header">
+                    <span>Core Subjects and Modules</span>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="content-section">
+                        <h3>Year 1 Modules</h3>
+                        <div class="subtopics-grid">
+                            <div class="subtopic-item"><strong>Semester 1:</strong> Programming Fundamentals, Database Design, Statistics Basics</div>
+                            <div class="subtopic-item"><strong>Semester 2:</strong> Data Structures, SQL, Descriptive Statistics</div>
+                        </div>
+
+                        <h3>Year 2 Modules</h3>
+                        <div class="subtopics-grid">
+                            <div class="subtopic-item"><strong>Semester 3:</strong> Python for Data Analysis, Business Intelligence, Advanced Statistics</div>
+                            <div class="subtopic-item"><strong>Semester 4:</strong> Machine Learning, Data Visualization, Capstone Project</div>
+                        </div>
+
+                        <h3>Key Technologies</h3>
+                        <div class="subtopics-grid">
+                            <div class="subtopic-item">Python & R programming languages</div>
+                            <div class="subtopic-item">SQL and database management</div>
+                            <div class="subtopic-item">Tableau & Power BI for visualization</div>
+                            <div class="subtopic-item">Excel with advanced analytics</div>
+                            <div class="subtopic-item">Machine learning libraries (scikit-learn, TensorFlow)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-section active">
+                <div class="collapsible-header">
+                    <span>Career Prospects</span>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="content-section">
+                        <h3>Job Opportunities</h3>
+                        <div class="subtopics-grid">
+                            <div class="subtopic-item"><strong>Data Analyst:</strong> Analyzing business data for insights</div>
+                            <div class="subtopic-item"><strong>Business Intelligence Analyst:</strong> Creating analytics solutions</div>
+                            <div class="subtopic-item"><strong>Data Scientist:</strong> Building predictive models</div>
+                            <div class="subtopic-item"><strong>Database Administrator:</strong> Managing data systems</div>
+                            <div class="subtopic-item"><strong>Analytics Manager:</strong> Leading analytics teams</div>
+                            <div class="subtopic-item"><strong>Consultant:</strong> Advising on data strategy</div>
+                        </div>
+
+                        <h3>Employment Sectors</h3>
+                        <div class="subtopics-grid">
+                            <div class="subtopic-item">Finance & Banking</div>
+                            <div class="subtopic-item">Technology & Telecommunications</div>
+                            <div class="subtopic-item">Healthcare & Pharmaceuticals</div>
+                            <div class="subtopic-item">E-commerce & Retail</div>
+                            <div class="subtopic-item">Government & Non-profits</div>
+                            <div class="subtopic-item">Manufacturing & Logistics</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-section active">
+                <div class="collapsible-header">
+                    <span>Assessment and Grading</span>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="content-section">
+                        <h3>Evaluation Methods</h3>
+                        <ul style="margin-left: 20px;">
+                            <li><strong>Continuous Assessment (40%):</strong> Assignments, quizzes, participation</li>
+                            <li><strong>Practical Work (30%):</strong> Lab projects, hands-on exercises</li>
+                            <li><strong>Final Examination (30%):</strong> Comprehensive module exams</li>
+                        </ul>
+
+                        <h3>Grading Scale</h3>
+                        <div class="subtopics-grid">
+                            <div class="subtopic-item"><strong>A:</strong> 80-100% (Excellent)</div>
+                            <div class="subtopic-item"><strong>B:</strong> 70-79% (Good)</div>
+                            <div class="subtopic-item"><strong>C:</strong> 60-69% (Satisfactory)</div>
+                            <div class="subtopic-item"><strong>D:</strong> 50-59% (Pass)</div>
+                            <div class="subtopic-item"><strong>F:</strong> Below 50% (Fail)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instructor Profiles Section -->
+    <section id="instructors" class="section" style="background: var(--cream), url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&q=50') center/cover; background-blend-mode: lighten;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Meet Our Instructors</h2>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+                <div class="content-section" style="text-align: center;">
+                    <div style="width: 120px; height: 120px; background: linear-gradient(135deg, var(--primary), var(--accent)); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; font-size: 3rem; color: white;">👨‍🏫</div>
+                    <h3>Dr. Solomon Kuteesa</h3>
+                    <p style="color: var(--primary); font-weight: 600; margin-bottom: 0.5rem;">Lead Instructor - ICT & Data Science</p>
+                    <p>Expert in Information Technology, Data Science, and emerging technologies with 15+ years of industry experience.</p>
+                    <p style="font-size: 0.9rem; margin-top: 1rem; opacity: 0.8;">PhD in Computer Science | Certified Data Scientist | Industry Professional</p>
+                </div>
+
+                <div class="content-section" style="text-align: center;">
+                    <div style="width: 120px; height: 120px; background: linear-gradient(135deg, var(--accent), var(--accent-dark)); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; font-size: 3rem; color: white;">�‍🏫</div>
+                    <h3>Mr. Kibirango Shadrack</h3>
+                    <p style="color: var(--primary); font-weight: 600; margin-bottom: 0.5rem;">Database & Systems Specialist</p>
+                    <p>Expert in database design, system architecture, and information technology infrastructure development.</p>
+                    <p style="font-size: 0.9rem; margin-top: 1rem; opacity: 0.8;">BSc Computer Science | Database Administrator | Systems Architect</p>
+                </div>
+
+                <div class="content-section" style="text-align: center;">
+                    <div style="width: 120px; height: 120px; background: linear-gradient(135deg, var(--success), #10b981); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; font-size: 3rem; color: white;">�‍💼</div>
+                    <h3>Ms. Sylvia Namuganza</h3>
+                    <p style="color: var(--primary); font-weight: 600; margin-bottom: 0.5rem;">ICT & Web Development Specialist</p>
+                    <p>Expertise in web application development, ICT infrastructure, and digital solutions implementation.</p>
+                    <p style="font-size: 0.9rem; margin-top: 1rem; opacity: 0.8;">BSc Information Technology | Full Stack Developer | Technology Consultant</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Resources Section -->
+    <section id="resources" class="section" style="background: linear-gradient(135deg, rgba(139, 69, 19, 0.08), rgba(106, 13, 173, 0.05)), url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&q=50') center/cover fixed;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Learning Resources & Materials</h2>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+                <div class="content-section">
+                    <h3 style="color: var(--primary); display: flex; align-items: center; gap: 0.5rem;"><span>📚</span> Recommended Textbooks</h3>
+                    <ul style="margin-left: 20px; margin-top: 1rem;">
+                        <li>"Introduction to Computer Networks" - James F. Kurose</li>
+                        <li>"Python for Data Analysis" - Wes McKinney</li>
+                        <li>"Database System Concepts" - Silberschatz, Korth & Sudarshan</li>
+                        <li>"Computer Security: Principles and Practice" - Stallings & Brown</li>
+                        <li>"The Pragmatic Programmer" - Hunt & Thomas</li>
+                    </ul>
+                </div>
+
+                <div class="content-section">
+                    <h3 style="color: var(--primary); display: flex; align-items: center; gap: 0.5rem;"><span>🎓</span> Online Learning Platforms</h3>
+                    <ul style="margin-left: 20px; margin-top: 1rem;">
+                        <li><a href="#" style="color: var(--primary); text-decoration: none;">Coursera</a> - University-level courses</li>
+                        <li><a href="#" style="color: var(--primary); text-decoration: none;">edX</a> - Professional certificates</li>
+                        <li><a href="#" style="color: var(--primary); text-decoration: none;">Udemy</a> - Practical skill development</li>
+                        <li><a href="#" style="color: var(--primary); text-decoration: none;">Khan Academy</a> - Free fundamentals</li>
+                        <li><a href="#" style="color: var(--primary); text-decoration: none;">DataCamp</a> - Data science focus</li>
+                    </ul>
+                </div>
+
+                <div class="content-section">
+                    <h3 style="color: var(--primary); display: flex; align-items: center; gap: 0.5rem;"><span>🎥</span> YouTube Channels</h3>
+                    <ul style="margin-left: 20px; margin-top: 1rem;">
+                        <li>CS50 - Harvard Computer Science</li>
+                        <li>Traversy Media - Web & Full Stack</li>
+                        <li>freeCodeCamp - Comprehensive tutorials</li>
+                        <li>StatQuest with Josh Starmer - Data Science</li>
+                        <li>NetworkChuck - Networking & Security</li>
+                    </ul>
+                </div>
+
+                <div class="content-section">
+                    <h3 style="color: var(--primary); display: flex; align-items: center; gap: 0.5rem;"><span>💻</span> Coding Practice Platforms</h3>
+                    <ul style="margin-left: 20px; margin-top: 1rem;">
+                        <li><a href="#" style="color: var(--primary); text-decoration: none;">LeetCode</a> - Algorithm challenges</li>
+                        <li><a href="#" style="color: var(--primary); text-decoration: none;">HackerRank</a> - Skill assessments</li>
+                        <li><a href="#" style="color: var(--primary); text-decoration: none;">CodeSignal</a> - Technical interviews</li>
+                        <li><a href="#" style="color: var(--primary); text-decoration: none;">GitHub</a> - Real-world projects</li>
+                        <li><a href="#" style="color: var(--primary); text-decoration: none;">Stack Overflow</a> - Community support</li>
+                    </ul>
+                </div>
+
+                <div class="content-section">
+                    <h3 style="color: var(--primary); display: flex; align-items: center; gap: 0.5rem;"><span>📖</span> Documentation & References</h3>
+                    <ul style="margin-left: 20px; margin-top: 1rem;">
+                        <li><a href="#" style="color: var(--primary); text-decoration: none;">Python Official Docs</a></li>
+                        <li><a href="#" style="color: var(--primary); text-decoration: none;">MDN Web Docs</a></li>
+                        <li><a href="#" style="color: var(--primary); text-decoration: none;">W3Schools</a></li>
+                        <li><a href="#" style="color: var(--primary); text-decoration: none;">MySQL Documentation</a></li>
+                        <li><a href="#" style="color: var(--primary); text-decoration: none;">OWASP Security</a></li>
+                    </ul>
+                </div>
+
+                <div class="content-section">
+                    <h3 style="color: var(--primary); display: flex; align-items: center; gap: 0.5rem;"><span>⬇️</span> Download Materials</h3>
+                    <div style="margin-top: 1rem;">
+                        <p><a href="#syllabus-modal" onclick="openMaterial(event, 'syllabus-modal')" style="display: inline-block; background: var(--primary); color: white; padding: 0.6rem 1rem; border-radius: 6px; text-decoration: none; margin-bottom: 0.5rem; cursor: pointer;">📄 Course Syllabus PDF</a></p>
+                        <p><a href="#study-guide-modal" onclick="openMaterial(event, 'study-guide-modal')" style="display: inline-block; background: var(--primary); color: white; padding: 0.6rem 1rem; border-radius: 6px; text-decoration: none; margin-bottom: 0.5rem; cursor: pointer;">📖 Study Guide</a></p>
+                        <p><a href="#lecture-notes-modal" onclick="openMaterial(event, 'lecture-notes-modal')" style="display: inline-block; background: var(--primary); color: white; padding: 0.6rem 1rem; border-radius: 6px; text-decoration: none; margin-bottom: 0.5rem; cursor: pointer;">📋 Sample Lecture Notes</a></p>
+                        <p><a href="#exam-papers-modal" onclick="openMaterial(event, 'exam-papers-modal')" style="display: inline-block; background: var(--primary); color: white; padding: 0.6rem 1rem; border-radius: 6px; text-decoration: none; margin-bottom: 0.5rem; cursor: pointer;">✏️ Past Exam Papers</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Syllabus Modal -->
+    <div id="syllabus-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 1000; overflow-y: auto;">
+        <div style="background: white; max-width: 800px; margin: 2rem auto; padding: 2rem; border-radius: 16px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                <h2>📄 Course Syllabus PDF</h2>
+                <button onclick="closeMaterial('syllabus-modal')" style="background: none; border: none; font-size: 1.5rem; cursor: pointer;">✕</button>
+            </div>
+            <div style="max-height: 600px; overflow-y: auto;">
+                <h3>ICT Comprehensive Course Syllabus</h3>
+                <p><strong>Course Code:</strong> ICT-101</p>
+                <p><strong>Duration:</strong> 12 Weeks</p>
+                <p><strong>Credits:</strong> 12</p>
+                
+                <h4>Course Overview</h4>
+                <p>This comprehensive course covers fundamental and advanced concepts in Information and Communication Technology, preparing students for modern digital careers.</p>
+                
+                <h4>Learning Outcomes</h4>
+                <ul style="margin-left: 20px;">
+                    <li>Understand core ICT principles and technologies</li>
+                    <li>Apply practical ICT skills in real-world scenarios</li>
+                    <li>Develop problem-solving abilities using technology</li>
+                    <li>Master network and security fundamentals</li>
+                    <li>Build competency in software and hardware systems</li>
+                </ul>
+                
+                <h4>Course Modules</h4>
+                <ul style="margin-left: 20px;">
+                    <li>Module 1: Introduction to ICT (Week 1-2)</li>
+                    <li>Module 2: Computer Hardware (Week 3-4)</li>
+                    <li>Module 3: Software & Operating Systems (Week 5-6)</li>
+                    <li>Module 4: Networks & Internet (Week 7-8)</li>
+                    <li>Module 5: Security & Privacy (Week 9-10)</li>
+                    <li>Module 6: Data Management (Week 11-12)</li>
+                </ul>
+                
+                <h4>Assessment Methods</h4>
+                <ul style="margin-left: 20px;">
+                    <li>Continuous Assessment: 30%</li>
+                    <li>Practical Assignments: 30%</li>
+                    <li>Final Examination: 40%</li>
+                </ul>
+                
+                <p style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #ddd;">
+                    <a href="#" onclick="alert('PDF Download: course-syllabus.pdf'); return false;" style="display: inline-block; background: var(--success); color: white; padding: 0.6rem 1.5rem; border-radius: 6px; text-decoration: none;">⬇️ Download Full Syllabus PDF</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Study Guide Modal -->
+    <div id="study-guide-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 1000; overflow-y: auto;">
+        <div style="background: white; max-width: 800px; margin: 2rem auto; padding: 2rem; border-radius: 16px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                <h2>📖 Study Guide</h2>
+                <button onclick="closeMaterial('study-guide-modal')" style="background: none; border: none; font-size: 1.5rem; cursor: pointer;">✕</button>
+            </div>
+            <div style="max-height: 600px; overflow-y: auto;">
+                <h3>Premier ICT Study Guide</h3>
+                
+                <h4>How to Use This Study Guide</h4>
+                <p>This guide is designed to help you succeed in your ICT courses. It contains key concepts, study tips, and resources.</p>
+                
+                <h4>Chapter 1: ICT Fundamentals</h4>
+                <p><strong>Key Topics:</strong> Definition of ICT, IT vs ICT, Components and applications</p>
+                <p><strong>Study Tips:</strong> Focus on understanding real-world applications, Create mind maps of ICT components</p>
+                
+                <h4>Chapter 2: Hardware Systems</h4>
+                <p><strong>Key Topics:</strong> CPU, RAM, Storage, Peripherals, System architecture</p>
+                <p><strong>Study Tips:</strong> Learn component functions and interactions, Practice identifying hardware types</p>
+                
+                <h4>Chapter 3: Software & Operating Systems</h4>
+                <p><strong>Key Topics:</strong> System software, Application software, OS functions, File management</p>
+                <p><strong>Study Tips:</strong> Understand the OS role, Compare different operating systems</p>
+                
+                <h4>Chapter 4: Networks & Internet</h4>
+                <p><strong>Key Topics:</strong> Network types, Internet protocols, Web services, Email systems</p>
+                <p><strong>Study Tips:</strong> Memorize network topologies, Understand TCP/IP model</p>
+                
+                <h4>Chapter 5: Security & Privacy</h4>
+                <p><strong>Key Topics:</strong> Threats and vulnerabilities, Encryption, Firewalls, Best practices</p>
+                <p><strong>Study Tips:</strong> Learn common cyber threats, Understand prevention methods</p>
+                
+                <h4>Study Recommendations</h4>
+                <ul style="margin-left: 20px;">
+                    <li>Allocate 2-3 hours of study per week per module</li>
+                    <li>Complete all practical exercises</li>
+                    <li>Join study groups with peers</li>
+                    <li>Review lecture notes regularly</li>
+                    <li>Practice with online simulations</li>
+                </ul>
+                
+                <p style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #ddd;">
+                    <a href="#" onclick="alert('PDF Download: study-guide.pdf'); return false;" style="display: inline-block; background: var(--success); color: white; padding: 0.6rem 1.5rem; border-radius: 6px; text-decoration: none;">⬇️ Download Study Guide PDF</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sample Lecture Notes Modal -->
+    <div id="lecture-notes-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 1000; overflow-y: auto;">
+        <div style="background: white; max-width: 800px; margin: 2rem auto; padding: 2rem; border-radius: 16px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                <h2>📋 Sample Lecture Notes</h2>
+                <button onclick="closeMaterial('lecture-notes-modal')" style="background: none; border: none; font-size: 1.5rem; cursor: pointer;">✕</button>
+            </div>
+            <div style="max-height: 600px; overflow-y: auto;">
+                <h3>Sample: Introduction to ICT - Lecture 1</h3>
+                <p><strong>Date:</strong> January 15, 2026</p>
+                <p><strong>Instructor:</strong> Dr. Solomon Kuteesa</p>
+                
+                <h4>Topics Covered:</h4>
+                <ul style="margin-left: 20px;">
+                    <li>What is ICT?</li>
+                    <li>Evolution of Information Technology</li>
+                    <li>ICT in Daily Life</li>
+                    <li>Career Opportunities in ICT</li>
+                </ul>
+                
+                <h4>Lecture Notes</h4>
+                <p><strong>1. Definition of ICT</strong></p>
+                <p>ICT (Information and Communication Technology) encompasses all technologies used to create, process, store, and exchange information. It includes:</p>
+                <ul style="margin-left: 20px;">
+                    <li>Hardware: Physical devices (computers, servers, routers)</li>
+                    <li>Software: Programs and applications</li>
+                    <li>Networks: Systems for data transmission</li>
+                    <li>Communication: Methods of information sharing</li>
+                </ul>
+                
+                <p><strong>2. Key Milestones in ICT Evolution</strong></p>
+                <ul style="margin-left: 20px;">
+                    <li>1950s: Mainframe computers introduced</li>
+                    <li>1970s: Personal computers emerged</li>
+                    <li>1990s: Internet revolution began</li>
+                    <li>2000s: Mobile and cloud computing rise</li>
+                    <li>2020s: AI and IoT transformation</li>
+                </ul>
+                
+                <p><strong>3. Applications of ICT</strong></p>
+                <ul style="margin-left: 20px;">
+                    <li>Education: E-learning platforms, virtual classrooms</li>
+                    <li>Healthcare: Electronic health records, telemedicine</li>
+                    <li>Business: Enterprise resource planning, e-commerce</li>
+                    <li>Government: Digital services, e-governance</li>
+                </ul>
+                
+                <h4>Key Takeaways</h4>
+                <ul style="margin-left: 20px;">
+                    <li>ICT is foundational to modern society</li>
+                    <li>Technology continues to evolve rapidly</li>
+                    <li>ICT skills are essential for future careers</li>
+                    <li>Understanding ICT opens many opportunities</li>
+                </ul>
+                
+                <p style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #ddd;">
+                    <a href="#" onclick="alert('PDF Download: lecture-notes-week1.pdf'); return false;" style="display: inline-block; background: var(--success); color: white; padding: 0.6rem 1.5rem; border-radius: 6px; text-decoration: none;">⬇️ Download Lecture Notes PDF</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Past Exam Papers Modal -->
+    <div id="exam-papers-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 1000; overflow-y: auto;">
+        <div style="background: white; max-width: 800px; margin: 2rem auto; padding: 2rem; border-radius: 16px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                <h2>✏️ Past Exam Papers</h2>
+                <button onclick="closeMaterial('exam-papers-modal')" style="background: none; border: none; font-size: 1.5rem; cursor: pointer;">✕</button>
+            </div>
+            <div style="max-height: 600px; overflow-y: auto;">
+                <h3>Past Examination Papers - ICT Courses</h3>
+                
+                <h4>Available Exam Papers</h4>
+                <p style="background: #f0f4f8; padding: 1rem; border-radius: 6px; margin-bottom: 1rem;">
+                    <strong>📋 ICT Fundamentals - December 2025</strong><br>
+                    Duration: 3 hours | Total Marks: 100<br>
+                    <a href="#" onclick="alert('Paper Download: ICT-101-Dec2025.pdf'); return false;" style="color: var(--primary); text-decoration: none;">Download →</a>
+                </p>
+                
+                <p style="background: #f0f4f8; padding: 1rem; border-radius: 6px; margin-bottom: 1rem;">
+                    <strong>📋 Networking & Security - September 2025</strong><br>
+                    Duration: 2.5 hours | Total Marks: 80<br>
+                    <a href="#" onclick="alert('Paper Download: ICT-304-Sep2025.pdf'); return false;" style="color: var(--primary); text-decoration: none;">Download →</a>
+                </p>
+                
+                <p style="background: #f0f4f8; padding: 1rem; border-radius: 6px; margin-bottom: 1rem;">
+                    <strong>📋 Data Management & Databases - June 2025</strong><br>
+                    Duration: 3 hours | Total Marks: 100<br>
+                    <a href="#" onclick="alert('Paper Download: ICT-205-Jun2025.pdf'); return false;" style="color: var(--primary); text-decoration: none;">Download →</a>
+                </p>
+                
+                <p style="background: #f0f4f8; padding: 1rem; border-radius: 6px; margin-bottom: 1rem;">
+                    <strong>📋 Software Systems - March 2025</strong><br>
+                    Duration: 2.5 hours | Total Marks: 80<br>
+                    <a href="#" onclick="alert('Paper Download: ICT-202-Mar2025.pdf'); return false;" style="color: var(--primary); text-decoration: none;">Download →</a>
+                </p>
+                
+                <h4>How to Use Past Papers</h4>
+                <ul style="margin-left: 20px;">
+                    <li>Use as practice tests before your exam</li>
+                    <li>Time yourself to simulate exam conditions</li>
+                    <li>Compare your answers with the marking scheme</li>
+                    <li>Identify weak areas and review them</li>
+                    <li>Familiarize yourself with question formats</li>
+                </ul>
+                
+                <h4>Marking Schemes</h4>
+                <p>Marking schemes for all past papers are available separately. Contact your instructor to receive the answer keys.</p>
+                
+                <p style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #ddd;">
+                    <a href="#" onclick="alert('PDF Download: past-exam-papers-collection.pdf'); return false;" style="display: inline-block; background: var(--success); color: white; padding: 0.6rem 1.5rem; border-radius: 6px; text-decoration: none;">⬇️ Download All Exam Papers (ZIP)</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section" style="background: var(--cream), url('https://images.unsplash.com/photo-1633356122544-f134324ef6db?w=1200&q=50') center/cover; background-blend-mode: multiply;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Student Success Stories & Testimonials</h2>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                <div class="content-section" style="border-left: 5px solid var(--accent);">
+                    <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                        <div style="font-size: 2.5rem;">⭐⭐⭐⭐⭐</div>
+                    </div>
+                    <p style="margin-top: 1rem; font-style: italic; color: var(--gray);">"Premier ICT transformed my career! The practical approach and expert instructors made complex concepts easy to understand. I landed a data analyst position within 3 months of graduation."</p>
+                    <p style="font-weight: 600; margin-top: 1rem; color: var(--brown-dark);">— Sarah Nakiyemba</p>
+                    <p style="font-size: 0.9rem; opacity: 0.8;">Data Analyst at Tech Solutions Uganda</p>
+                </div>
+
+                <div class="content-section" style="border-left: 5px solid var(--accent);">
+                    <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                        <div style="font-size: 2.5rem;">⭐⭐⭐⭐⭐</div>
+                    </div>
+                    <p style="margin-top: 1rem; font-style: italic; color: var(--gray);">"The Data Science diploma was exactly what I needed. The project-based learning approach helped me build a portfolio that impressed employers. Highly recommended!"</p>
+                    <p style="font-weight: 600; margin-top: 1rem; color: var(--brown-dark);">— Joseph Mwesigwa</p>
+                    <p style="font-size: 0.9rem; opacity: 0.8;">Machine Learning Engineer at Innovation Hub</p>
+                </div>
+
+                <div class="content-section" style="border-left: 5px solid var(--accent);">
+                    <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                        <div style="font-size: 2.5rem;">⭐⭐⭐⭐⭐</div>
+                    </div>
+                    <p style="margin-top: 1rem; font-style: italic; color: var(--gray);">"The instructors genuinely care about your success. The cybersecurity module gave me skills I'm using daily at my job. Worth every penny!"</p>
+                    <p style="font-weight: 600; margin-top: 1rem; color: var(--brown-dark);">— Emma Katushabe</p>
+                    <p style="font-size: 0.9rem; opacity: 0.8;">Security Analyst at Digital Bank</p>
+                </div>
+
+                <div class="content-section" style="border-left: 5px solid var(--accent);">
+                    <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                        <div style="font-size: 2.5rem;">⭐⭐⭐⭐⭐</div>
+                    </div>
+                    <p style="margin-top: 1rem; font-style: italic; color: var(--gray);">"Excellent support from staff and instructors. The job placement assistance really helped me transition into the tech industry."</p>
+                    <p style="font-weight: 600; margin-top: 1rem; color: var(--brown-dark);">— Denis Kamikazi</p>
+                    <p style="font-size: 0.9rem; opacity: 0.8;">Full Stack Developer at StartUp Africa</p>
+                </div>
+            </div>
+
+            <div style="background: white; padding: 2rem; border-radius: 16px; margin-top: 3rem; text-align: center; box-shadow: var(--card-shadow);">
+                <h3 style="margin-bottom: 1.5rem;">Job Placement Success Rate</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 2rem;">
+                    <div>
+                        <div style="font-size: 2.5rem; color: var(--primary); font-weight: 700;">92%</div>
+                        <p>Graduates Employed</p>
+                    </div>
+                    <div>
+                        <div style="font-size: 2.5rem; color: var(--primary); font-weight: 700;">3 Months</div>
+                        <p>Average Time to Job</p>
+                    </div>
+                    <div>
+                        <div style="font-size: 2.5rem; color: var(--primary); font-weight: 700;">50+</div>
+                        <p>Partner Companies</p>
+                    </div>
+                    <div>
+                        <div style="font-size: 2.5rem; color: var(--primary); font-weight: 700;">4.8/5</div>
+                        <p>Average Rating</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog/News Section -->
+    <section id="blog" class="section" style="background: linear-gradient(135deg, rgba(56, 189, 248, 0.08), rgba(139, 69, 19, 0.05)), url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&q=50') center/cover fixed;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Blog & News</h2>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+                <div class="content-section">
+                    <div style="background: var(--primary); color: white; padding: 0.5rem 1rem; border-radius: 6px; display: inline-block; font-size: 0.85rem; margin-bottom: 1rem;">Technology Trends</div>
+                    <h3 style="margin-bottom: 0.8rem;">The Rise of AI in Data Science</h3>
+                    <p style="color: var(--gray); font-size: 0.95rem; margin-bottom: 1rem;">Artificial Intelligence is revolutionizing how we approach data analysis and decision-making. Learn about the latest AI trends and their impact on the industry.</p>
+                    <p style="font-size: 0.9rem; opacity: 0.7;">📅 January 20, 2026</p>
+                    <a href="#" style="color: var(--primary); font-weight: 600; text-decoration: none; display: inline-block; margin-top: 1rem;">Read More →</a>
+                </div>
+
+                <div class="content-section">
+                    <div style="background: var(--accent); color: white; padding: 0.5rem 1rem; border-radius: 6px; display: inline-block; font-size: 0.85rem; margin-bottom: 1rem;">Cybersecurity</div>
+                    <h3 style="margin-bottom: 0.8rem;">10 Essential Cybersecurity Practices in 2026</h3>
+                    <p style="color: var(--gray); font-size: 0.95rem; margin-bottom: 1rem;">With cyber threats increasing daily, here are the top 10 security practices every individual and organization should implement.</p>
+                    <p style="font-size: 0.9rem; opacity: 0.7;">📅 January 18, 2026</p>
+                    <a href="#" style="color: var(--primary); font-weight: 600; text-decoration: none; display: inline-block; margin-top: 1rem;">Read More →</a>
+                </div>
+
+                <div class="content-section">
+                    <div style="background: var(--success); color: white; padding: 0.5rem 1rem; border-radius: 6px; display: inline-block; font-size: 0.85rem; margin-bottom: 1rem;">Career Advice</div>
+                    <h3 style="margin-bottom: 0.8rem;">How to Land Your First Tech Job</h3>
+                    <p style="color: var(--gray); font-size: 0.95rem; margin-bottom: 1rem;">Transitioning into tech can be challenging. This guide shares practical tips that helped our graduates secure their first tech positions.</p>
+                    <p style="font-size: 0.9rem; opacity: 0.7;">📅 January 15, 2026</p>
+                    <a href="#" style="color: var(--primary); font-weight: 600; text-decoration: none; display: inline-block; margin-top: 1rem;">Read More →</a>
+                </div>
+
+                <div class="content-section">
+                    <div style="background: var(--warning); color: white; padding: 0.5rem 1rem; border-radius: 6px; display: inline-block; font-size: 0.85rem; margin-bottom: 1rem;">Student Spotlight</div>
+                    <h3 style="margin-bottom: 0.8rem;">Meet Our Data Science Graduate</h3>
+                    <p style="color: var(--gray); font-size: 0.95rem; margin-bottom: 1rem;">Follow the journey of one of our graduates as she progresses from student to data scientist at a leading tech company.</p>
+                    <p style="font-size: 0.9rem; opacity: 0.7;">📅 January 12, 2026</p>
+                    <a href="#" style="color: var(--primary); font-weight: 600; text-decoration: none; display: inline-block; margin-top: 1rem;">Read More →</a>
+                </div>
+
+                <div class="content-section">
+                    <div style="background: #8b5cf6; color: white; padding: 0.5rem 1rem; border-radius: 6px; display: inline-block; font-size: 0.85rem; margin-bottom: 1rem;">Industry Updates</div>
+                    <h3 style="margin-bottom: 0.8rem;">Latest Technologies in Web Development</h3>
+                    <p style="color: var(--gray); font-size: 0.95rem; margin-bottom: 1rem;">Explore the newest frameworks, tools, and best practices shaping modern web development in 2026.</p>
+                    <p style="font-size: 0.9rem; opacity: 0.7;">📅 January 10, 2026</p>
+                    <a href="#" style="color: var(--primary); font-weight: 600; text-decoration: none; display: inline-block; margin-top: 1rem;">Read More →</a>
+                </div>
+
+                <div class="content-section">
+                    <div style="background: #ec4899; color: white; padding: 0.5rem 1rem; border-radius: 6px; display: inline-block; font-size: 0.85rem; margin-bottom: 1rem;">ICT News</div>
+                    <h3 style="margin-bottom: 0.8rem;">Digital Transformation in Uganda</h3>
+                    <p style="color: var(--gray); font-size: 0.95rem; margin-bottom: 1rem;">Uganda's growing tech ecosystem presents incredible opportunities for ICT professionals. Discover the latest developments.</p>
+                    <p style="font-size: 0.9rem; opacity: 0.7;">📅 January 8, 2026</p>
+                    <a href="#" style="color: var(--primary); font-weight: 600; text-decoration: none; display: inline-block; margin-top: 1rem;">Read More →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="section" style="background: var(--cream), url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&q=50') center/cover; background-blend-mode: screen;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div class="collapsible-section active">
+                    <div class="collapsible-header">
+                        <span>What is the admission process?</span>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="collapsible-content">
+                        <p>Our admission process is straightforward: 1) Submit application form with required documents, 2) Attend interviews, 3) Receive admission letter, 4) Complete registration and enrollment. Most decisions are made within 2-3 weeks of submission.</p>
+                    </div>
+                </div>
+
+                <div class="collapsible-section active">
+                    <div class="collapsible-header">
+                        <span>How much does the program cost?</span>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="collapsible-content">
+                        <p>Program fees vary by course. ICT Foundation courses: UGX 500,000 - 800,000. Data Science Diploma: UGX 2,500,000 per year. We offer payment plans and scholarships for qualified candidates. Contact our admissions team for specific pricing.</p>
+                    </div>
+                </div>
+
+                <div class="collapsible-section active">
+                    <div class="collapsible-header">
+                        <span>What qualifications do I need to apply?</span>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="collapsible-content">
+                        <p>Minimum requirement: Uganda Advanced Certificate of Education (UACE) or equivalent. For Data Science Diploma, you need at least 2 principal passes, with Mathematics highly recommended. Basic computer literacy is beneficial but not required as we teach from fundamentals.</p>
+                    </div>
+                </div>
+
+                <div class="collapsible-section active">
+                    <div class="collapsible-header">
+                        <span>Are there online learning options?</span>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="collapsible-content">
+                        <p>Yes! We offer hybrid and fully online options for select programs. Online students have access to recorded lectures, live sessions, discussion forums, and full support from instructors. Contact us to discuss which programs suit your preferences.</p>
+                    </div>
+                </div>
+
+                <div class="collapsible-section active">
+                    <div class="collapsible-header">
+                        <span>How long is the program?</span>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="collapsible-content">
+                        <p>Course durations vary: ICT Foundation (3 months), Professional Diplomas (2 years), Certificates (6-12 months). Our Data Science Diploma is 2 years including a 3-month internship. Flexible scheduling options available.</p>
+                    </div>
+                </div>
+
+                <div class="collapsible-section active">
+                    <div class="collapsible-header">
+                        <span>Do you provide job placement assistance?</span>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="collapsible-content">
+                        <p>Absolutely! We have dedicated career services including resume building, interview coaching, LinkedIn optimization, and internship placement. Our strong network includes 50+ partner companies actively recruiting our graduates. We boast a 92% employment rate within 3 months of graduation.</p>
+                    </div>
+                </div>
+
+                <div class="collapsible-section active">
+                    <div class="collapsible-header">
+                        <span>What is the class size?</span>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="collapsible-content">
+                        <p>We maintain small class sizes (maximum 25-30 students) to ensure personalized attention. Practical labs and projects have even smaller groups (10-15 students) for hands-on learning and support.</p>
+                    </div>
+                </div>
+
+                <div class="collapsible-section active">
+                    <div class="collapsible-header">
+                        <span>Can I get a refund if I withdraw?</span>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="collapsible-content">
+                        <p>Yes. Refund policy: Full refund if you withdraw within 7 days of enrollment, 50% refund before course start date, no refund after courses begin. Check our Terms & Conditions for complete details.</p>
+                    </div>
+                </div>
+
+                <div class="collapsible-section active">
+                    <div class="collapsible-header">
+                        <span>Do you offer scholarships?</span>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="collapsible-content">
+                        <p>Yes! We offer merit-based scholarships (based on academic excellence), need-based scholarships, and corporate scholarships. We also have referral programs and early-bird discounts. Contact admissions@premierict.ug for details.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Online Feedback Portal -->
+    <section id="feedback" class="section" style="background: linear-gradient(135deg, #f0e6d2, var(--cream)), url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&q=50') center/cover; background-blend-mode: lighten;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Contact & Feedback</h2>
+            </div>
+            <div class="feedback-portal">
+                <form id="feedbackForm">
+                    <div class="form-group">
+                        <label for="feedback-name">Your Name *</label>
+                        <input type="text" id="feedback-name" name="name" required placeholder="Enter your full name">
+                    </div>
+                    <div class="form-group">
+                        <label for="feedback-email">Email Address *</label>
+                        <input type="email" id="feedback-email" name="email" required placeholder="Enter your email address">
+                    </div>
+                    <div class="form-group">
+                        <label for="feedback-subject">Subject *</label>
+                        <input type="text" id="feedback-subject" name="subject" required placeholder="Enter message subject">
+                    </div>
+                    <div class="form-group">
+                        <label for="feedback-message">Your Message *</label>
+                        <textarea id="feedback-message" name="message" required placeholder="Type your detailed feedback here..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+                <div style="text-align: center; margin-top: 1.5rem; padding: 1rem; background: rgba(106, 13, 173, 0.05); border-radius: 8px;">
+                    <p style="color: var(--gray); margin: 0;">Messages are sent directly to: <strong>solomonkuteesa1@gmail.com</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Premier ICT</h3>
+                    <p>Your ultimate resource for comprehensive ICT knowledge and education. Bridging the digital divide and empowering the next generation of tech professionals.</p>
+                    <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                        <a href="#" style="color: var(--accent); text-decoration: none; font-size: 1.3rem;" title="LinkedIn">in</a>
+                        <a href="#" style="color: var(--accent); text-decoration: none; font-size: 1.3rem;" title="Facebook">f</a>
+                        <a href="#" style="color: var(--accent); text-decoration: none; font-size: 1.3rem;" title="Twitter">𝕏</a>
+                        <a href="#" style="color: var(--accent); text-decoration: none; font-size: 1.3rem;" title="YouTube">▶</a>
+                        <a href="#" style="color: var(--accent); text-decoration: none; font-size: 1.3rem;" title="WhatsApp">💬</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#definition">What is ICT?</a></li>
+                        <li><a href="#curriculum">Curriculum</a></li>
+                        <li><a href="#datascience">Data Science Program</a></li>
+                        <li><a href="#instructors">Instructors</a></li>
+                        <li><a href="#resources">Learning Resources</a></li>
+                        <li><a href="#blog">Blog & News</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>More Links</h3>
+                    <ul>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#terms">Terms & Conditions</a></li>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#feedback">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Information</h3>
+                    <ul style="list-style: none; margin-left: 0;">
+                        <li style="margin-bottom: 0.6rem;">📧 Email: <a href="mailto:solomonkuteesa1@gmail.com" style="color: #cbd5e1; text-decoration: none;">solomonkuteesa1@gmail.com</a></li>
+                        <li style="margin-bottom: 0.6rem;">📱 WhatsApp: <a href="https://wa.me/256765544553" style="color: #cbd5e1; text-decoration: none;">+256 765 544 553</a></li>
+                        <li style="margin-bottom: 0.6rem;">📍 Location: Kampala, Uganda</li>
+                        <li style="margin-bottom: 0.6rem;">🕒 Hours: Mon-Fri 9AM-6PM EAT</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 Premier ICT. All rights reserved. | <a href="#terms" style="color: #cbd5e1; text-decoration: none;">Terms</a> | <a href="#privacy" style="color: #cbd5e1; text-decoration: none;">Privacy</a> | <a href="#feedback" style="color: #cbd5e1; text-decoration: none;">Contact</a></p>
+                <p style="margin-top: 1rem; font-size: 0.85rem; opacity: 0.85;">Made by <strong style="color: var(--accent);">Kuteesa Solomon</strong></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Terms & Conditions Modal/Section -->
+    <div id="terms" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 1000; overflow-y: auto;">
+        <div style="background: white; max-width: 800px; margin: 2rem auto; padding: 2rem; border-radius: 16px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                <h2>Terms & Conditions</h2>
+                <button onclick="document.getElementById('terms').style.display='none'" style="background: none; border: none; font-size: 1.5rem; cursor: pointer;">✕</button>
+            </div>
+            <div style="max-height: 500px; overflow-y: auto;">
+                <h3>1. Acceptance of Terms</h3>
+                <p>By accessing and using this website, you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to abide by the above, please do not use this service.</p>
+                
+                <h3>2. Educational Services</h3>
+                <p>Premier ICT provides educational services including online and offline courses. Students agree to comply with all course requirements and academic integrity policies.</p>
+                
+                <h3>3. Intellectual Property Rights</h3>
+                <p>All content on this website, including text, graphics, logos, images, and software, is the property of Premier ICT or its content suppliers and is protected by international copyright laws.</p>
+                
+                <h3>4. Payment Terms</h3>
+                <p>All fees must be paid according to the payment schedule provided. Refund policy: Full refund within 7 days of enrollment, 50% refund before course start, no refund after courses begin.</p>
+                
+                <h3>5. Cancellation & Withdrawal</h3>
+                <p>Students may withdraw from courses according to the published withdrawal policy. Refunds will be processed within 14 business days.</p>
+                
+                <h3>6. Limitation of Liability</h3>
+                <p>Premier ICT shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of or inability to use the services.</p>
+                
+                <h3>7. Governing Law</h3>
+                <p>These terms and conditions are governed by and construed in accordance with the laws of Uganda, and you irrevocably submit to the exclusive jurisdiction of the courts located in Uganda.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Privacy Policy Modal/Section -->
+    <div id="privacy" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 1000; overflow-y: auto;">
+        <div style="background: white; max-width: 800px; margin: 2rem auto; padding: 2rem; border-radius: 16px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                <h2>Privacy Policy</h2>
+                <button onclick="document.getElementById('privacy').style.display='none'" style="background: none; border: none; font-size: 1.5rem; cursor: pointer;">✕</button>
+            </div>
+            <div style="max-height: 500px; overflow-y: auto;">
+                <h3>1. Information Collection</h3>
+                <p>We collect information you provide when enrolling in courses, including name, email, phone number, and educational background. We also collect usage data to improve our services.</p>
+                
+                <h3>2. Use of Information</h3>
+                <p>Your information is used to provide educational services, improve our platform, communicate with you about courses, and send relevant updates. We do not sell or share your information with third parties without consent.</p>
+                
+                <h3>3. Data Security</h3>
+                <p>We implement appropriate technical and organizational measures to protect your personal information from unauthorized access, alteration, disclosure, or destruction.</p>
+                
+                <h3>4. Cookies</h3>
+                <p>Our website uses cookies to enhance user experience. You can disable cookies in your browser settings, but some functionality may be limited.</p>
+                
+                <h3>5. Your Rights</h3>
+                <p>You have the right to access, update, or delete your personal information. To exercise these rights, contact us at solomonkuteesa1@gmail.com.</p>
+                
+                <h3>6. Third-Party Links</h3>
+                <p>Our website may contain links to third-party websites. We are not responsible for the privacy practices of external sites. We encourage you to review their privacy policies.</p>
+                
+                <h3>7. Changes to Privacy Policy</h3>
+                <p>We may update this privacy policy periodically. Changes will be posted on this page with an updated effective date. Your continued use of the site constitutes acceptance of changes.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Collapsible sections functionality
+        document.querySelectorAll('.collapsible-section').forEach(section => {
+            const header = section.querySelector('.collapsible-header');
+            if (header) {
+                header.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    section.classList.toggle('active');
+                });
+            }
+            // Also allow clicking on the entire section
+            section.addEventListener('click', function() {
+                this.classList.toggle('active');
+            });
+        });
+
+        // Page loading transition for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // Show loading screen
+                    showLoadingScreen();
+                    
+                    // Simulate page load with timeout
+                    setTimeout(function() {
+                        // Scroll to target
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'instant'
+                        });
+                        // Hide loading screen
+                        hideLoadingScreen();
+                    }, 600);
+                }
+            });
+        });
+
+        // Loading screen functions
+        function showLoadingScreen() {
+            let loader = document.getElementById('page-loader');
+            if (!loader) {
+                loader = document.createElement('div');
+                loader.id = 'page-loader';
+                loader.style.cssText = `
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: linear-gradient(135deg, rgba(253, 245, 230, 0.98), rgba(248, 244, 233, 0.98));
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    z-index: 9999;
+                    animation: fadeIn 0.3s ease-in;
+                `;
+                
+                // Add spinner
+                loader.innerHTML = `
+                    <div style="text-align: center;">
+                        <div style="
+                            width: 60px;
+                            height: 60px;
+                            border: 4px solid rgba(139, 69, 19, 0.2);
+                            border-top: 4px solid #6a0dad;
+                            border-radius: 50%;
+                            animation: spin 1s linear infinite;
+                            margin: 0 auto 1.5rem;
+                        "></div>
+                        <p style="
+                            color: #8B4513;
+                            font-size: 1.1rem;
+                            font-weight: 600;
+                            letter-spacing: 1px;
+                            margin: 0;
+                        ">LOADING...</p>
+                    </div>
+                    <style>
+                        @keyframes fadeIn {
+                            from { opacity: 0; }
+                            to { opacity: 1; }
+                        }
+                        @keyframes spin {
+                            to { transform: rotate(360deg); }
+                        }
+                    </style>
+                `;
+                document.body.appendChild(loader);
+            }
+            loader.style.display = 'flex';
+        }
+
+        function hideLoadingScreen() {
+            const loader = document.getElementById('page-loader');
+            if (loader) {
+                loader.style.animation = 'fadeOut 0.4s ease-out forwards';
+                setTimeout(function() {
+                    loader.style.display = 'none';
+                    loader.style.animation = '';
+                }, 400);
+            }
+        }
+
+        // Add fadeOut keyframe
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeOut {
+                from { opacity: 1; }
+                to { opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Enhanced Feedback Form Handler - Direct Email Integration
+        document.getElementById('feedbackForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('feedback-name').value;
+            const email = document.getElementById('feedback-email').value;
+            const subject = document.getElementById('feedback-subject').value;
+            const message = document.getElementById('feedback-message').value;
+            
+            // Get the submit button
+            const submitBtn = this.querySelector('.submit-btn');
+            const originalText = submitBtn.innerText;
+            submitBtn.innerText = 'Sending...';
+            submitBtn.disabled = true;
+
+            // Send email using FormSubmit API
+            const formData = new FormData();
+            formData.append('name', name);
+            formData.append('email', email);
+            formData.append('subject', subject);
+            formData.append('message', message);
+            formData.append('_subject', `Premier ICT Feedback: ${subject}`);
+            formData.append('_captcha', 'false');
+
+            fetch('https://formsubmit.co/ajax/solomonkuteesa1@gmail.com', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('⚠️ Sorry, our feedback system is under construction.\n\nPlease send your feedback directly to:\n\n📧 solomonkuteesa1@gmail.com\n\nThank you for your patience!');
+                    document.getElementById('feedbackForm').reset();
+                } else {
+                    throw new Error('Submission failed');
+                }
+                submitBtn.innerText = originalText;
+                submitBtn.disabled = false;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('✗ Error sending feedback. Please try again later.');
+                submitBtn.innerText = originalText;
+                submitBtn.disabled = false;
+            });
+        });
+
+        // Modal functionality
+        document.querySelectorAll('a[href="#terms"], a[href="#privacy"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const modalId = this.getAttribute('href').substring(1);
+                document.getElementById(modalId).style.display = 'block';
+            });
+        });
+
+        // Close modals when clicking outside
+        document.querySelectorAll('div[id="terms"], div[id="privacy"]').forEach(modal => {
+            modal.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    this.style.display = 'none';
+                }
+            });
+        });
+
+        // Download Materials Modal Functions
+        function openMaterial(e, modalId) {
+            e.preventDefault();
+            document.getElementById(modalId).style.display = 'block';
+        }
+
+        function closeMaterial(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        // Close material modals when clicking outside
+        document.querySelectorAll('div[id="syllabus-modal"], div[id="study-guide-modal"], div[id="lecture-notes-modal"], div[id="exam-papers-modal"]').forEach(modal => {
+            modal.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    this.style.display = 'none';
+                }
+            });
+        });
+
+        // Interactive Skill Assessment Quiz
+        function initializeQuiz() {
+            const quizQuestions = [
+                { q: 'What does ICT stand for?', a: 'Information and Communication Technology' },
+                { q: 'Which language is most used for data science?', a: 'Python' },
+                { q: 'What is the primary purpose of a firewall?', a: 'Protect networks from unauthorized access' }
+            ];
+            
+            // Quiz functionality can be expanded here
+        }
+
+        initializeQuiz();
